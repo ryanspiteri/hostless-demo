@@ -1,287 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hostless — your Airbnb, on autopilot</title>
+<title>Hostless — we run your Airbnb, you keep the income</title>
+<meta name="robots" content="noindex, nofollow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
-  /* ============ DESIGN SYSTEM ============ */
+  /* ============ DESIGN SYSTEM — coastal concierge (dark, premium) ============ */
   :root {
-    --ink:       #221d18;
-    --ink-soft:  #6b6157;
-    --ink-faint: #9a8f82;
-    --paper:     #f6f1e8;
-    --paper-2:   #efe7da;
-    --card:      #fffdf8;
-    --line:      #e4d9c8;
-    --line-soft: #efe7d8;
-    --terra:     #cf5e2c;
-    --terra-deep:#a8451c;
-    --terra-wash:#f8e4d6;
-    --forest:    #2f5d50;
-    --forest-wash:#dceae3;
-    --amber:     #b97e1f;
-    --amber-wash:#f4e6c8;
-    --rose:      #a83f44;
-    --rose-wash: #f4dcdc;
-    --shadow-sm: 0 1px 2px rgba(50,40,28,.05), 0 2px 6px rgba(50,40,28,.04);
-    --shadow-md: 0 4px 12px rgba(50,40,28,.07), 0 12px 32px rgba(50,40,28,.06);
-    --shadow-lg: 0 18px 50px rgba(50,40,28,.13);
-    --r:   14px;
-    --r-sm:10px;
-    --r-lg:22px;
-    --sans:'Schibsted Grotesk',ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
-    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --bg:        #0d1714;
+    --bg-2:      #102019;
+    --surface:   #15241d;
+    --surface-2: #1a2c24;
+    --surface-3: #213a30;
+    --line:      #294238;
+    --line-soft: #20342b;
+    --cream:     #f3eee2;
+    --sand:      #e6d3a6;
+    --gold:      #d8b878;
+    --gold-deep: #b8965a;
+    --clay:      #e08153;
+    --clay-deep: #cf6a3c;
+    --sage:      #9fb3a6;
+    --sage-dim:  #75887c;
+    --good:      #84c9a3;
+    --good-bg:   #19362a;
+    --warn:      #e0b15a;
+    --warn-bg:   #36301a;
+    --alert:     #e58a76;
+    --alert-bg:  #3a261f;
+    --shadow:    0 18px 50px rgba(0,0,0,.4);
+    --shadow-sm: 0 2px 10px rgba(0,0,0,.25);
+    --r:   14px; --r-sm: 10px; --r-lg: 22px;
+    --sans:'Hanken Grotesk',ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
     --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: var(--sans);
-    color: var(--ink);
-    background: var(--paper);
+    font-family: var(--sans); color: var(--cream); background: var(--bg);
     background-image:
-      radial-gradient(1200px 600px at 80% -10%, rgba(207,94,44,.07), transparent 60%),
-      radial-gradient(900px 500px at -5% 10%, rgba(47,93,80,.06), transparent 55%);
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.5;
-    min-height: 100vh;
+      radial-gradient(1100px 620px at 82% -8%, rgba(216,184,120,.10), transparent 60%),
+      radial-gradient(900px 560px at -6% 4%, rgba(224,129,83,.08), transparent 55%),
+      radial-gradient(800px 800px at 50% 120%, rgba(132,201,163,.06), transparent 60%);
+    -webkit-font-smoothing: antialiased; line-height: 1.5; min-height: 100vh;
   }
-  /* subtle paper grain */
   body::before {
-    content:""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    opacity: .5;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+    content:""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
   }
-
-  ::selection { background: var(--terra); color: #fff; }
-
+  ::selection { background: var(--gold); color: #14241d; }
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+  a { color: inherit; }
 
   /* ============ TOP BAR ============ */
   header {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(246,241,232,.82);
-    backdrop-filter: saturate(140%) blur(14px);
-    border-bottom: 1px solid var(--line);
+    background: rgba(13,23,20,.78); backdrop-filter: saturate(150%) blur(16px);
+    border-bottom: 1px solid var(--line-soft);
   }
-  .bar { display: flex; align-items: center; gap: 22px; height: 68px; }
+  .bar { display: flex; align-items: center; gap: 20px; height: 70px; }
   .brand { display: flex; align-items: center; gap: 11px; }
   .mark {
-    width: 34px; height: 34px; border-radius: 10px; flex: none;
-    background: linear-gradient(145deg, var(--terra), var(--terra-deep));
-    box-shadow: 0 4px 12px rgba(207,94,44,.32), inset 0 1px 0 rgba(255,255,255,.3);
-    display: grid; place-items: center; color: #fff; position: relative;
+    width: 36px; height: 36px; border-radius: 11px; flex: none; position: relative;
+    background: linear-gradient(150deg, var(--gold), var(--gold-deep));
+    box-shadow: 0 6px 16px rgba(216,184,120,.28), inset 0 1px 0 rgba(255,255,255,.35);
+    display: grid; place-items: center; color: #14241d;
   }
-  .mark svg { width: 19px; height: 19px; }
-  .brand-name { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
-  .brand-name b { color: var(--terra); font-weight: 600; }
-  .brand-tag { font-size: 11px; color: var(--ink-faint); letter-spacing: .03em; margin-top: -3px; }
+  .mark svg { width: 20px; height: 20px; }
+  .brand-name { font-family: var(--serif); font-weight: 500; font-size: 23px; letter-spacing: -.01em; color: var(--cream); }
+  .brand-tag { font-size: 10.5px; color: var(--sage-dim); letter-spacing: .08em; text-transform: uppercase; margin-top: -2px; }
+  .tabs { display: flex; gap: 4px; margin-left: 12px; background: var(--bg-2); padding: 4px; border-radius: 12px; border: 1px solid var(--line-soft); }
+  .tab { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--sage); border: none; background: transparent; padding: 8px 15px; border-radius: 9px; cursor: pointer; transition: all .18s ease; }
+  .tab:hover { color: var(--cream); }
+  .tab.active { background: var(--surface-2); color: var(--cream); box-shadow: var(--shadow-sm); }
+  .bar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .au-pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; color: var(--sand); background: var(--surface); border: 1px solid var(--line); padding: 6px 12px; border-radius: 100px; }
+  .au-pill .flag { font-size: 13px; }
+  .conn { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; color: var(--good); background: var(--good-bg); padding: 6px 11px; border-radius: 100px; border: 1px solid #214a39; }
+  .conn .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(132,201,163,.5);} 70%{box-shadow:0 0 0 7px rgba(132,201,163,0);} 100%{box-shadow:0 0 0 0 rgba(132,201,163,0);} }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,var(--gold),var(--gold-deep)); color: #14241d; display: grid; place-items: center; font-weight: 800; font-size: 13px; }
 
-  .tabs { display: flex; gap: 4px; margin-left: 14px; background: var(--paper-2); padding: 4px; border-radius: 12px; border: 1px solid var(--line-soft); }
-  .tab {
-    font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink-soft);
-    border: none; background: transparent; padding: 8px 16px; border-radius: 9px; cursor: pointer;
-    transition: all .18s ease; letter-spacing: -.005em;
-  }
-  .tab:hover { color: var(--ink); }
-  .tab.active { background: var(--card); color: var(--ink); box-shadow: var(--shadow-sm); }
-
-  .bar-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
-  .conn {
-    display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600;
-    color: var(--forest); background: var(--forest-wash); padding: 6px 11px; border-radius: 100px;
-    border: 1px solid #c4dccf;
-  }
-  .conn .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--forest); box-shadow: 0 0 0 0 rgba(47,93,80,.5); animation: pulse 2.4s infinite; }
-  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(47,93,80,.45);} 70%{box-shadow:0 0 0 7px rgba(47,93,80,0);} 100%{box-shadow:0 0 0 0 rgba(47,93,80,0);} }
-  .avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#3a5d54,#2f5d50); color:#fff; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
-
-  /* ============ VIEWS ============ */
   .view { display: none; animation: rise .5s cubic-bezier(.2,.7,.2,1) both; }
   .view.active { display: block; }
   @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-  /* ============ HOW IT WORKS ============ */
-  .hero { padding: 78px 0 30px; position: relative; }
-  .eyebrow { display: inline-flex; align-items:center; gap:8px; font-size: 12.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--terra); margin-bottom: 22px; }
-  .eyebrow::before { content:""; width: 26px; height: 1.5px; background: var(--terra); display:inline-block; }
-  .hero h1 {
-    font-family: var(--serif); font-weight: 500; font-size: clamp(42px, 6.4vw, 78px);
-    line-height: .98; letter-spacing: -.025em; max-width: 14ch;
-  }
-  .hero h1 em { font-style: italic; color: var(--terra); }
-  .hero .lede { font-size: clamp(17px,1.7vw,20px); color: var(--ink-soft); max-width: 56ch; margin-top: 26px; line-height: 1.55; }
-  .hero .lede b { color: var(--ink); font-weight: 600; }
-  .hero-stats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
-  .hstat { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 20px; box-shadow: var(--shadow-sm); min-width: 150px; }
-  .hstat .n { font-family: var(--serif); font-size: 32px; font-weight: 600; letter-spacing: -.02em; line-height: 1; }
-  .hstat .n span { color: var(--terra); }
-  .hstat .l { font-size: 13px; color: var(--ink-soft); margin-top: 7px; }
+  /* ============ HERO ============ */
+  .hero { padding: 84px 0 26px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .eyebrow::before { content:""; width: 28px; height: 1.5px; background: var(--gold); }
+  .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 6.6vw, 82px); line-height: .98; letter-spacing: -.025em; max-width: 15ch; color: var(--cream); }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero .lede { font-size: clamp(17px,1.7vw,20px); color: var(--sage); max-width: 56ch; margin-top: 26px; line-height: 1.55; }
+  .hero .lede b { color: var(--cream); font-weight: 600; }
+  .hero-cta { display: flex; gap: 14px; align-items: center; margin-top: 34px; flex-wrap: wrap; }
+  .btn-primary { font-family: var(--sans); font-size: 15px; font-weight: 700; color: #14241d; background: linear-gradient(160deg,var(--clay),var(--clay-deep)); border: none; padding: 14px 24px; border-radius: 12px; cursor: pointer; box-shadow: 0 10px 26px rgba(224,129,83,.32); transition: transform .15s ease, box-shadow .15s ease; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(224,129,83,.4); }
+  .btn-ghost { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--cream); background: transparent; border: 1px solid var(--line); padding: 14px 22px; border-radius: 12px; cursor: pointer; transition: border-color .15s; }
+  .btn-ghost:hover { border-color: var(--gold); }
+  .hero-stats { display: flex; flex-wrap: wrap; gap: 30px 46px; margin-top: 52px; padding-top: 34px; border-top: 1px solid var(--line-soft); }
+  .hstat .n { font-family: var(--serif); font-size: 40px; font-weight: 500; letter-spacing: -.02em; line-height: 1; color: var(--cream); }
+  .hstat .n span { color: var(--gold); }
+  .hstat .l { font-size: 13.5px; color: var(--sage); margin-top: 9px; max-width: 22ch; }
 
-  .section-head { margin: 76px 0 30px; }
-  .section-head .k { font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
-  .section-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(28px,3.6vw,40px); letter-spacing: -.02em; margin-top: 10px; line-height: 1.05; }
-  .section-head p { color: var(--ink-soft); max-width: 60ch; margin-top: 12px; font-size: 16px; }
+  .section-head { margin: 88px 0 32px; }
+  .section-head .k { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+  .section-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px,3.8vw,44px); letter-spacing: -.02em; margin-top: 12px; line-height: 1.04; color: var(--cream); max-width: 20ch; }
+  .section-head h2 em { font-style: italic; color: var(--gold); }
+  .section-head p { color: var(--sage); max-width: 62ch; margin-top: 14px; font-size: 16px; }
 
-  /* the loop */
+  /* ============ SWEET SPOT (comparison) ============ */
+  .compare { display: grid; grid-template-columns: 1.1fr 1.25fr 1.1fr; gap: 18px; }
+  .col { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px 26px; position: relative; }
+  .col.feature { background: linear-gradient(170deg,#1d3127,#15241d); border-color: var(--gold-deep); box-shadow: 0 22px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(216,184,120,.18); transform: translateY(-8px); }
+  .col .tagtop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #14241d; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; white-space: nowrap; }
+  .col h3 { font-size: 15px; font-weight: 700; color: var(--sage); letter-spacing: .01em; }
+  .col.feature h3 { color: var(--gold); }
+  .col .who { font-family: var(--serif); font-size: 26px; font-weight: 500; margin: 6px 0 4px; color: var(--cream); }
+  .col .price { font-size: 14px; color: var(--sage); margin-bottom: 20px; }
+  .col .price b { color: var(--cream); font-weight: 700; font-size: 16px; }
+  .crow { display: flex; gap: 11px; padding: 12px 0; border-top: 1px solid var(--line-soft); font-size: 14px; align-items: flex-start; }
+  .crow:first-of-type { border-top: none; }
+  .crow .ci { flex: none; width: 18px; height: 18px; margin-top: 1px; }
+  .crow.bad { color: var(--sage); }
+  .crow.bad .ci { color: var(--alert); }
+  .crow.good .ci { color: var(--good); }
+  .crow b { color: var(--cream); font-weight: 600; }
+  .col .verdict { margin-top: 18px; font-size: 13px; font-weight: 600; padding: 11px 14px; border-radius: var(--r-sm); line-height: 1.4; }
+  .col .verdict.dim { background: var(--bg-2); color: var(--sage); }
+  .col .verdict.win { background: var(--good-bg); color: var(--good); }
+
+  /* ============ LOOP ============ */
   .loop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .step { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 20px 20px; box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
-  .step:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-  .step .num { font-family: var(--mono); font-size: 12px; color: var(--terra); font-weight: 600; letter-spacing: .05em; }
-  .step .ic { width: 40px; height: 40px; border-radius: 11px; background: var(--terra-wash); color: var(--terra-deep); display: grid; place-items: center; margin: 12px 0 14px; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 20px; transition: transform .2s ease, border-color .2s ease; }
+  .step:hover { transform: translateY(-3px); border-color: var(--gold-deep); }
+  .step .num { font-family: var(--mono); font-size: 12px; color: var(--gold); font-weight: 600; }
+  .step .ic { width: 42px; height: 42px; border-radius: 12px; background: var(--surface-3); color: var(--sand); display: grid; place-items: center; margin: 13px 0 14px; }
   .step .ic svg { width: 21px; height: 21px; }
-  .step h3 { font-size: 16px; font-weight: 700; letter-spacing: -.01em; }
-  .step p { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.5; }
-  .step.auto { border-color: #d8c3b2; background: linear-gradient(180deg,#fff9f3,#fffdf8); }
+  .step h3 { font-size: 16px; font-weight: 700; color: var(--cream); }
+  .step p { font-size: 13.5px; color: var(--sage); margin-top: 6px; line-height: 1.5; }
 
-  /* split columns */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 30px; box-shadow: var(--shadow-sm); }
-  .panel.dark { background: linear-gradient(165deg,#2a2620,#221d18); border-color:#3a342c; color:#f6f1e8; }
-  .panel h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; letter-spacing: -.01em; margin-bottom: 6px; }
-  .panel .sub { font-size: 13.5px; color: var(--ink-faint); margin-bottom: 20px; }
-  .panel.dark .sub { color: #b8aE9f; }
+  /* ============ AU SECTION ============ */
+  .au-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .au-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; display: flex; gap: 16px; align-items: flex-start; }
+  .au-card .ic { flex: none; width: 44px; height: 44px; border-radius: 12px; background: var(--surface-3); color: var(--gold); display: grid; place-items: center; }
+  .au-card .ic svg { width: 22px; height: 22px; }
+  .au-card h4 { font-size: 16px; font-weight: 700; color: var(--cream); }
+  .au-card p { font-size: 13.5px; color: var(--sage); margin-top: 5px; line-height: 1.5; }
+
+  /* ============ SPLIT (what stays yours) ============ */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 30px; }
+  .panel.accent { background: linear-gradient(165deg,#1d3127,#162922); border-color: var(--gold-deep); }
+  .panel h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; color: var(--cream); margin-bottom: 4px; }
+  .panel .sub { font-size: 13.5px; color: var(--sage-dim); margin-bottom: 18px; }
   .li { display: flex; gap: 13px; padding: 13px 0; border-top: 1px solid var(--line-soft); align-items: flex-start; }
-  .panel.dark .li { border-top-color: #3a342c; }
   .li:first-of-type { border-top: none; }
   .li .tick { flex: none; width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center; margin-top: 1px; }
-  .tick.no { background: var(--rose-wash); color: var(--rose); }
-  .tick.keep { background: rgba(255,255,255,.1); color: #e9a982; }
-  .li .lt { font-size: 14.5px; font-weight: 600; }
-  .li .ld { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
-  .panel.dark .ld { color: #b8ae9f; }
+  .tick.no { background: var(--alert-bg); color: var(--alert); }
+  .tick.keep { background: var(--good-bg); color: var(--good); }
+  .li .lt { font-size: 14.5px; font-weight: 600; color: var(--cream); }
+  .li .ld { font-size: 13px; color: var(--sage); margin-top: 2px; }
   .li svg { width: 13px; height: 13px; }
 
-  /* integrations */
-  .integ { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-  .chip { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 9px 16px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-sm); }
-  .chip .cd { width: 8px; height: 8px; border-radius: 50%; }
-  .note-airbnb { margin-top: 22px; background: var(--terra-wash); border: 1px solid #ecc7b0; border-radius: var(--r); padding: 18px 22px; font-size: 14.5px; color: var(--terra-deep); line-height: 1.55; display:flex; gap:13px; align-items:flex-start; }
-  .note-airbnb b { font-weight: 700; }
-  .note-airbnb svg { flex:none; width: 20px; height: 20px; margin-top: 1px; }
+  .note { margin-top: 24px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 20px 24px; font-size: 14.5px; color: var(--sage); line-height: 1.6; display: flex; gap: 14px; align-items: flex-start; }
+  .note b { color: var(--cream); font-weight: 700; }
+  .note svg { flex: none; width: 20px; height: 20px; color: var(--gold); margin-top: 2px; }
+
+  /* ============ PRICING / CTA ============ */
+  .cta-band { margin: 90px 0 0; background: linear-gradient(165deg,#1d3127,#13211b); border: 1px solid var(--gold-deep); border-radius: var(--r-lg); padding: 52px; text-align: center; position: relative; overflow: hidden; }
+  .cta-band::after { content:""; position: absolute; inset: 0; background: radial-gradient(600px 300px at 50% -20%, rgba(216,184,120,.14), transparent 70%); pointer-events: none; }
+  .cta-band .k { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+  .cta-band h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px,4vw,46px); letter-spacing: -.02em; margin: 12px 0 6px; color: var(--cream); }
+  .cta-price { font-family: var(--serif); font-size: 30px; color: var(--cream); margin: 18px 0 6px; }
+  .cta-price b { color: var(--gold); }
+  .cta-price .per { font-size: 16px; color: var(--sage); font-family: var(--sans); }
+  .cta-sub { color: var(--sage); font-size: 15px; max-width: 50ch; margin: 0 auto 26px; }
+  .cta-band .btn-primary { font-size: 16px; padding: 15px 32px; }
+
+  footer { text-align: center; padding: 54px 0 40px; color: var(--sage-dim); font-size: 12.5px; }
+  footer b { color: var(--sage); }
 
   /* ============ DASHBOARD ============ */
-  .dash-head { padding: 40px 0 26px; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .dash-head h2 { font-family: var(--serif); font-weight: 500; font-size: 34px; letter-spacing: -.02em; }
-  .dash-head .greet { color: var(--ink-soft); font-size: 15px; margin-top: 4px; }
-  .seg { display: flex; gap: 3px; background: var(--paper-2); border: 1px solid var(--line-soft); padding: 4px; border-radius: 11px; }
-  .seg button { border: none; background: transparent; font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-soft); padding: 7px 13px; border-radius: 8px; cursor: pointer; }
-  .seg button.on { background: var(--card); color: var(--ink); box-shadow: var(--shadow-sm); }
+  .dash-head { padding: 42px 0 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .dash-head h2 { font-family: var(--serif); font-weight: 500; font-size: 34px; letter-spacing: -.02em; color: var(--cream); }
+  .dash-head .greet { color: var(--sage); font-size: 15px; margin-top: 4px; }
+  .seg { display: flex; gap: 3px; background: var(--bg-2); border: 1px solid var(--line-soft); padding: 4px; border-radius: 11px; }
+  .seg button { border: none; background: transparent; font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--sage); padding: 7px 13px; border-radius: 8px; cursor: pointer; }
+  .seg button.on { background: var(--surface-2); color: var(--cream); }
 
-  .metrics { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin-bottom: 22px; }
-  .metric { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
-  .metric .ml { font-size: 12.5px; color: var(--ink-soft); font-weight: 600; display: flex; align-items: center; gap: 6px; }
-  .metric .ml svg { width: 14px; height: 14px; color: var(--ink-faint); }
-  .metric .mv { font-family: var(--serif); font-size: 30px; font-weight: 600; letter-spacing: -.02em; margin-top: 9px; line-height: 1; }
-  .metric .md { font-size: 12px; margin-top: 8px; font-weight: 600; }
-  .md.up { color: var(--forest); }
-  .md.flat { color: var(--ink-faint); }
-  .metric .spark { position: absolute; right: 14px; bottom: 12px; opacity: .8; }
+  /* approval banner — the managed-service differentiator */
+  .approve { background: linear-gradient(160deg,#352a18,#241f14); border: 1px solid var(--warn); border-radius: var(--r-lg); padding: 20px 24px; margin-bottom: 20px; }
+  .approve-top { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .approve-top .badge-warn { font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--warn); background: rgba(224,177,90,.14); padding: 3px 9px; border-radius: 6px; }
+  .approve h3 { font-size: 16px; font-weight: 700; color: var(--cream); }
+  .approve .hint { font-size: 13px; color: var(--sand); margin-bottom: 14px; }
+  .arow { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-top: 1px solid rgba(224,177,90,.18); }
+  .arow:last-child { padding-bottom: 0; }
+  .arow .at { flex: 1; }
+  .arow .at .att { font-size: 14px; font-weight: 600; color: var(--cream); }
+  .arow .at .atd { font-size: 12.5px; color: var(--sand); margin-top: 2px; }
+  .arow .acts { display: flex; gap: 8px; flex: none; }
+  .mini { font-family: var(--sans); font-size: 12.5px; font-weight: 700; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: transform .12s; }
+  .mini:hover { transform: translateY(-1px); }
+  .mini.yes { background: var(--good); color: #0d1714; }
+  .mini.no { background: transparent; color: var(--sage); border: 1px solid var(--line); }
+  .mini.done { background: var(--good-bg); color: var(--good); cursor: default; }
+
+  .metrics { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin-bottom: 20px; }
+  .metric { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; }
+  .metric.hero-metric { background: linear-gradient(160deg,#1d3127,#162922); border-color: var(--gold-deep); }
+  .metric .ml { font-size: 12.5px; color: var(--sage); font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .metric .ml svg { width: 14px; height: 14px; color: var(--sage-dim); }
+  .metric .mv { font-family: var(--serif); font-size: 30px; font-weight: 500; letter-spacing: -.02em; margin-top: 9px; line-height: 1; color: var(--cream); }
+  .metric.hero-metric .mv { color: var(--gold); }
+  .metric .md { font-size: 12px; margin-top: 8px; font-weight: 600; color: var(--good); }
 
   .grid2 { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: start; }
-  .block { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .block { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
   .block-h { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid var(--line-soft); }
-  .block-h h3 { font-size: 16px; font-weight: 700; letter-spacing: -.01em; display:flex; align-items:center; gap:9px; }
-  .block-h .tagn { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: var(--paper-2); padding: 3px 8px; border-radius: 6px; }
+  .block-h h3 { font-size: 16px; font-weight: 700; color: var(--cream); display: flex; align-items: center; gap: 9px; }
+  .block-h h3 svg { color: var(--gold); }
+  .block-h .tagn { font-family: var(--mono); font-size: 11px; color: var(--sage-dim); background: var(--bg-2); padding: 3px 8px; border-radius: 6px; }
 
-  /* property cards */
   .props { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 18px; }
-  .prop { border: 1px solid var(--line); border-radius: var(--r); padding: 16px; transition: all .18s ease; cursor: default; background: linear-gradient(180deg,#fffefb,#fffdf8); }
-  .prop:hover { border-color: #d8c3b2; box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .prop { border: 1px solid var(--line); border-radius: var(--r); padding: 16px; transition: all .18s ease; background: var(--surface-2); }
+  .prop:hover { border-color: var(--gold-deep); transform: translateY(-2px); }
   .prop-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-  .prop h4 { font-size: 15.5px; font-weight: 700; letter-spacing: -.01em; }
-  .prop .loc { font-size: 12.5px; color: var(--ink-faint); margin-top: 2px; }
-  .badge { font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 100px; white-space: nowrap; letter-spacing: .01em; }
-  .b-occ { background: var(--forest-wash); color: var(--forest); }
-  .b-turn { background: var(--amber-wash); color: var(--amber); }
-  .b-vac { background: var(--paper-2); color: var(--ink-soft); }
-  .prop .meta { font-size: 13px; color: var(--ink-soft); margin-top: 13px; display: flex; align-items: center; gap: 7px; }
-  .prop .meta svg { width: 14px; height: 14px; color: var(--ink-faint); }
-  .occbar { height: 5px; background: var(--paper-2); border-radius: 100px; margin-top: 14px; overflow: hidden; }
-  .occbar i { display: block; height: 100%; background: linear-gradient(90deg,var(--terra),var(--terra-deep)); border-radius: 100px; }
-  .prop .occn { font-size: 11.5px; color: var(--ink-faint); margin-top: 6px; display: flex; justify-content: space-between; }
+  .prop h4 { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+  .prop .loc { font-size: 12.5px; color: var(--sage-dim); margin-top: 2px; }
+  .badge { font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 100px; white-space: nowrap; }
+  .b-occ { background: var(--good-bg); color: var(--good); }
+  .b-turn { background: var(--warn-bg); color: var(--warn); }
+  .b-vac { background: var(--bg-2); color: var(--sage); }
+  .prop .meta { font-size: 13px; color: var(--sage); margin-top: 13px; display: flex; align-items: center; gap: 7px; }
+  .prop .meta svg { width: 14px; height: 14px; color: var(--sage-dim); }
+  .occbar { height: 5px; background: var(--bg-2); border-radius: 100px; margin-top: 14px; overflow: hidden; }
+  .occbar i { display: block; height: 100%; background: linear-gradient(90deg,var(--gold),var(--gold-deep)); border-radius: 100px; }
+  .prop .occn { font-size: 11.5px; color: var(--sage-dim); margin-top: 6px; display: flex; justify-content: space-between; }
 
-  /* turnover timeline */
   .turn { padding: 18px 22px 22px; }
   .tl { position: relative; margin-left: 7px; }
   .tl::before { content:""; position: absolute; left: 5px; top: 4px; bottom: 4px; width: 2px; background: var(--line); }
   .tevent { position: relative; padding: 0 0 18px 26px; }
   .tevent:last-child { padding-bottom: 0; }
-  .tevent .tdot { position: absolute; left: 0; top: 3px; width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid var(--card); }
-  .tdot.done { background: var(--forest); }
-  .tdot.now { background: var(--terra); box-shadow: 0 0 0 4px var(--terra-wash); }
-  .tdot.next { background: var(--ink-faint); }
-  .tevent .tt { font-size: 14px; font-weight: 600; }
-  .tevent .tm { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
-  .tevent .ttime { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
-  .auto-pill { display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--terra-deep); background:var(--terra-wash); padding:2px 7px; border-radius:5px; margin-left:7px; }
+  .tevent .tdot { position: absolute; left: 0; top: 3px; width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid var(--surface); }
+  .tdot.done { background: var(--good); } .tdot.now { background: var(--clay); box-shadow: 0 0 0 4px rgba(224,129,83,.2); } .tdot.next { background: var(--sage-dim); }
+  .tevent .tt { font-size: 14px; font-weight: 600; color: var(--cream); }
+  .tevent .tm { font-size: 12.5px; color: var(--sage); margin-top: 2px; }
+  .tevent .ttime { font-family: var(--mono); font-size: 11.5px; color: var(--sage-dim); }
+  .auto-pill { display:inline-flex; align-items:center; gap:5px; font-size:10px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--gold); background:rgba(216,184,120,.12); padding:2px 7px; border-radius:5px; margin-left:7px; }
 
-  /* inbox */
-  .inbox-list { max-height: 268px; overflow-y: auto; }
+  .inbox-list { max-height: 250px; overflow-y: auto; }
   .thread { display: flex; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--line-soft); cursor: pointer; transition: background .14s ease; }
-  .thread:hover { background: var(--paper); }
-  .thread.sel { background: var(--terra-wash); box-shadow: inset 3px 0 0 var(--terra); }
-  .thread .tav { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; color: #fff; }
+  .thread:hover { background: var(--surface-2); }
+  .thread.sel { background: var(--surface-3); box-shadow: inset 3px 0 0 var(--gold); }
+  .thread .tav { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; color: #0d1714; }
   .thread-main { flex: 1; min-width: 0; }
   .thread-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-  .thread .nm { font-size: 14px; font-weight: 700; letter-spacing: -.01em; }
-  .thread .tm { font-size: 11px; color: var(--ink-faint); white-space: nowrap; font-family: var(--mono); }
-  .thread .pv { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .thread .where { font-size: 11px; color: var(--ink-faint); margin-top: 4px; }
-  .pill-ai { font-size: 10px; font-weight: 700; color: var(--forest); background: var(--forest-wash); padding: 2px 7px; border-radius: 5px; letter-spacing: .02em; }
-  .pill-esc { font-size: 10px; font-weight: 700; color: var(--rose); background: var(--rose-wash); padding: 2px 7px; border-radius: 5px; letter-spacing: .02em; }
+  .thread .nm { font-size: 14px; font-weight: 700; color: var(--cream); }
+  .thread .tm { font-size: 11px; color: var(--sage-dim); white-space: nowrap; font-family: var(--mono); }
+  .thread .pv { font-size: 12.5px; color: var(--sage); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .thread .where { font-size: 11px; color: var(--sage-dim); margin-top: 4px; }
+  .pill-ai { font-size: 10px; font-weight: 700; color: var(--good); background: var(--good-bg); padding: 2px 7px; border-radius: 5px; }
+  .pill-esc { font-size: 10px; font-weight: 700; color: var(--alert); background: var(--alert-bg); padding: 2px 7px; border-radius: 5px; }
 
-  /* conversation */
   .convo { border-top: 1px solid var(--line-soft); }
-  .convo-h { display: flex; align-items: center; gap: 11px; padding: 15px 22px; background: var(--paper); border-bottom: 1px solid var(--line-soft); }
+  .convo-h { display: flex; align-items: center; gap: 11px; padding: 15px 22px; background: var(--surface-2); border-bottom: 1px solid var(--line-soft); }
   .convo-h .tav { width: 34px; height: 34px; font-size: 12px; }
-  .convo-h .ch-nm { font-size: 14px; font-weight: 700; }
-  .convo-h .ch-w { font-size: 11.5px; color: var(--ink-faint); }
-  .msgs { padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; min-height: 180px; }
-  .msg { max-width: 78%; padding: 11px 15px; border-radius: 16px; font-size: 13.5px; line-height: 1.45; position: relative; }
-  .msg .who { font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 4px; opacity: .65; }
-  .msg.guest { align-self: flex-start; background: var(--paper-2); border-bottom-left-radius: 5px; }
-  .msg.ai { align-self: flex-end; background: linear-gradient(160deg,#cf5e2c,#a8451c); color: #fff; border-bottom-right-radius: 5px; box-shadow: 0 6px 16px rgba(207,94,44,.25); }
-  .msg.ai .who { color: #ffe6d6; opacity: 1; }
-  .msg .stamp { font-family: var(--mono); font-size: 9.5px; opacity: .6; margin-top: 5px; display: block; }
-  .typing { align-self: flex-end; background: var(--terra-wash); padding: 13px 17px; border-radius: 16px; border-bottom-right-radius: 5px; display: none; }
+  .convo-h .ch-nm { font-size: 14px; font-weight: 700; color: var(--cream); }
+  .convo-h .ch-w { font-size: 11.5px; color: var(--sage-dim); }
+  .msgs { padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; min-height: 170px; }
+  .msg { max-width: 80%; padding: 11px 15px; border-radius: 16px; font-size: 13.5px; line-height: 1.45; }
+  .msg .who { font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 4px; opacity: .7; }
+  .msg.guest { align-self: flex-start; background: var(--surface-3); color: var(--cream); border-bottom-left-radius: 5px; }
+  .msg.ai { align-self: flex-end; background: linear-gradient(160deg,var(--clay),var(--clay-deep)); color: #1a120c; border-bottom-right-radius: 5px; box-shadow: 0 6px 16px rgba(224,129,83,.25); }
+  .msg.ai .who { color: #4a2c18; opacity: 1; }
+  .msg .stamp { font-family: var(--mono); font-size: 9.5px; opacity: .65; margin-top: 5px; display: block; }
+  .typing { align-self: flex-end; background: rgba(224,129,83,.18); padding: 13px 17px; border-radius: 16px; border-bottom-right-radius: 5px; display: none; }
   .typing.show { display: inline-flex; gap: 4px; }
-  .typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--terra); animation: blink 1.2s infinite; }
+  .typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--clay); animation: blink 1.2s infinite; }
   .typing i:nth-child(2){ animation-delay:.2s; } .typing i:nth-child(3){ animation-delay:.4s; }
   @keyframes blink { 0%,60%,100%{ opacity:.3; transform: translateY(0);} 30%{ opacity:1; transform: translateY(-3px);} }
   .convo-foot { padding: 14px 22px 18px; border-top: 1px solid var(--line-soft); display: flex; gap: 10px; align-items: center; }
-  .demo-btn {
-    font-family: var(--sans); font-size: 13.5px; font-weight: 700; color: #fff; cursor: pointer;
-    background: linear-gradient(160deg,#2f5d50,#274d43); border: none; padding: 11px 18px; border-radius: 10px;
-    box-shadow: 0 6px 16px rgba(47,93,80,.28); transition: transform .15s ease, box-shadow .15s ease; display:inline-flex; align-items:center; gap:8px;
-  }
-  .demo-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(47,93,80,.32); }
-  .demo-btn:disabled { opacity: .5; cursor: default; transform: none; box-shadow: none; }
+  .demo-btn { font-family: var(--sans); font-size: 13.5px; font-weight: 700; color: #14241d; cursor: pointer; background: linear-gradient(160deg,var(--gold),var(--gold-deep)); border: none; padding: 11px 18px; border-radius: 10px; box-shadow: 0 6px 16px rgba(216,184,120,.25); transition: transform .15s ease; display:inline-flex; align-items:center; gap:8px; }
+  .demo-btn:hover { transform: translateY(-2px); }
+  .demo-btn:disabled { opacity: .5; cursor: default; transform: none; }
   .demo-btn svg { width: 15px; height: 15px; }
-  .foot-note { font-size: 12px; color: var(--ink-faint); }
+  .foot-note { font-size: 12px; color: var(--sage-dim); }
 
-  footer { text-align: center; padding: 56px 0 40px; color: var(--ink-faint); font-size: 12.5px; }
-  footer b { color: var(--ink-soft); }
-
-  /* responsive */
   @media (max-width: 980px) {
+    .compare, .split, .au-grid { grid-template-columns: 1fr; }
+    .col.feature { transform: none; }
     .loop { grid-template-columns: 1fr 1fr; }
-    .split { grid-template-columns: 1fr; }
     .metrics { grid-template-columns: repeat(2,1fr); }
     .grid2 { grid-template-columns: 1fr; }
-    .props { grid-template-columns: 1fr 1fr; }
-    .brand-tag { display: none; }
+    .brand-tag, .au-pill { display: none; }
   }
-  @media (max-width: 600px) {
-    .loop, .props, .metrics { grid-template-columns: 1fr; }
-    .tabs { margin-left: auto; }
-    .brand { display:none; }
-  }
+  @media (max-width: 600px) { .loop, .props, .metrics { grid-template-columns: 1fr; } .brand { display:none; } }
 </style>
 </head>
 <body>
@@ -289,21 +310,18 @@
 <header>
   <div class="wrap bar">
     <div class="brand">
-      <div class="mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M9 21v-6h6v6"/></svg>
-      </div>
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M9 21v-6h6v6"/></svg></div>
       <div>
-        <div class="brand-name">Host<b>less</b></div>
-        <div class="brand-tag">autonomous short-stay ops</div>
+        <div class="brand-name">Hostless</div>
+        <div class="brand-tag">Managed AI co-hosting</div>
       </div>
     </div>
-
     <nav class="tabs">
       <button class="tab active" data-view="how">How it works</button>
-      <button class="tab" data-view="app">Dashboard</button>
+      <button class="tab" data-view="app">Owner dashboard</button>
     </nav>
-
     <div class="bar-right">
+      <span class="au-pill"><span class="flag">🇦🇺</span> Built for AU hosts</span>
       <span class="conn"><span class="dot"></span> Connected to Airbnb</span>
       <div class="avatar">RS</div>
     </div>
@@ -315,258 +333,238 @@
   <div class="wrap">
 
     <section class="hero">
-      <div class="eyebrow">Autonomous hosting</div>
-      <h1>Your Airbnb runs <em>itself</em>.</h1>
-      <p class="lede">Hostless sits on top of the Airbnb account you already have. An AI agent answers every guest inside Airbnb, issues door codes, and dispatches your cleaner the moment a guest checks out. <b>You don't migrate anything, and you don't message anyone.</b></p>
-
+      <div class="eyebrow">Done-for-you · Australia</div>
+      <h1>We run your Airbnb. You keep the <em>income</em>.</h1>
+      <p class="lede">Hostless is a fully managed co-host service for Australian hosts. An AI agent handles every guest message inside your Airbnb, issues the door codes, and dispatches your cleaner. A real Australian team watches over it. <b>You don't operate software, and you don't talk to guests. You just get paid.</b></p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.querySelector('.tab[data-view=&quot;app&quot;]').click()">See the owner dashboard →</button>
+        <button class="btn-ghost">Book a 15-min setup call</button>
+      </div>
       <div class="hero-stats">
         <div class="hstat"><div class="n"><span>92%</span></div><div class="l">of guest messages handled with zero host input</div></div>
-        <div class="hstat"><div class="n">24<span>s</span></div><div class="l">average first reply, day or night</div></div>
-        <div class="hstat"><div class="n">100%</div><div class="l">turnovers cleaned on time, auto-scheduled</div></div>
-        <div class="hstat"><div class="n">~6<span>h</span></div><div class="l">of admin saved per property, per week</div></div>
+        <div class="hstat"><div class="n">48<span>h</span></div><div class="l">to get you fully set up and live</div></div>
+        <div class="hstat"><div class="n">~6<span>h</span></div><div class="l">of admin we take off your plate, per property, weekly</div></div>
+        <div class="hstat"><div class="n"><span>$129</span></div><div class="l">per property / month, fully managed</div></div>
       </div>
     </section>
 
+    <!-- THE WEDGE -->
     <section>
       <div class="section-head">
-        <div class="k">The loop</div>
-        <h2>One booking. Zero touches.</h2>
-        <p>Every booking runs the same automated chain end to end. The host only hears about it if something genuinely needs a human.</p>
+        <div class="k">Why not just buy software</div>
+        <h2>The hands-off of a co-host. <em>Nearly the price of software.</em></h2>
+        <p>You already have two options for an Airbnb you don't want to babysit. Both have a catch. Hostless sits in the gap between them.</p>
       </div>
+      <div class="compare">
+        <div class="col">
+          <h3>DIY software</h3>
+          <div class="who">You operate it</div>
+          <div class="price"><b>~$50</b> /property/mo + your time</div>
+          <div class="crow good"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Cheap monthly fee</span></div>
+          <div class="crow bad"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg><span>A weekend to set up, and you tune it</span></div>
+          <div class="crow bad"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Still <b>your</b> job when something breaks</span></div>
+          <div class="verdict dim">You bought a tool. You're still the operator.</div>
+        </div>
 
-      <div class="loop">
-        <div class="step auto"><div class="num">01</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="m9 16 2 2 4-4"/></svg></div><h3>Booking lands</h3><p>Airbnb confirms a reservation. Hostless picks it up instantly. The guest's already paid Airbnb, so it's locked.</p></div>
-        <div class="step auto"><div class="num">02</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>AI greets the guest</h3><p>A warm welcome plus the full house guide goes out inside Airbnb, in the guest's language.</p></div>
-        <div class="step auto"><div class="num">03</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg></div><h3>Door code issued</h3><p>A unique smart-lock code is generated for the stay and expires at checkout. No keys, no meetups.</p></div>
-        <div class="step auto"><div class="num">04</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div><h3>AI answers 24/7</h3><p>Wifi, early check-in, local tips, late checkout, the lot. Checked against the live calendar, answered in seconds.</p></div>
-        <div class="step auto"><div class="num">05</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><h3>Checkout detected</h3><p>The moment the calendar flips, the turnover clock starts. Code deactivates automatically.</p></div>
-        <div class="step auto"><div class="num">06</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l3 3v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/></svg></div><h3>Cleaner dispatched</h3><p>Your cleaner is notified with the address, the gap, and the next check-in time. They confirm in one tap.</p></div>
-        <div class="step auto"><div class="num">07</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.3 6.2 21l1.5-6.5L3 10.2l6.6-.6L12 3.5l2.4 6.1 6.6.6-4.7 4.3 1.5 6.5z"/></svg></div><h3>Review requested</h3><p>After checkout the AI thanks the guest and asks for a review at the moment they're happiest.</p></div>
-        <div class="step"><div class="num">↻</div><div class="ic" style="background:var(--forest-wash);color:var(--forest)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div><h3>Repeat, forever</h3><p>The property turns over and over without you opening the app. You check in when you want to, not because you have to.</p></div>
+        <div class="col feature">
+          <span class="tagtop">The sweet spot</span>
+          <h3>Hostless</h3>
+          <div class="who">We operate it</div>
+          <div class="price"><b>$129</b> /property/mo · all-in</div>
+          <div class="crow good"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>We set it up in <b>48 hours</b>, you do nothing</span></div>
+          <div class="crow good"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>AI replies 24/7, our AU team oversees it</span></div>
+          <div class="crow good"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>No key-person risk, no business hours</span></div>
+          <div class="verdict win">Fully hands-off. You're the owner, not the operator.</div>
+        </div>
+
+        <div class="col">
+          <h3>Human co-host</h3>
+          <div class="who">A person runs it</div>
+          <div class="price"><b>18–25%</b> of your booking revenue</div>
+          <div class="crow good"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Genuinely hands-off</span></div>
+          <div class="crow bad"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg><span><b>~$640+/mo</b> on a $3.2k property</span></div>
+          <div class="crow bad"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg><span>One person. Replies only when they're awake.</span></div>
+          <div class="verdict dim">Hands-off, but it eats a fifth of your income.</div>
+        </div>
       </div>
     </section>
 
+    <!-- LOOP -->
+    <section>
+      <div class="section-head">
+        <div class="k">What we run for you</div>
+        <h2>One booking. Zero touches from you.</h2>
+        <p>Every reservation runs the same chain, start to finish. You only hear from us when something genuinely needs the owner.</p>
+      </div>
+      <div class="loop">
+        <div class="step"><div class="num">01</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="m9 16 2 2 4-4"/></svg></div><h3>Booking lands</h3><p>Airbnb confirms it. The guest has already paid Airbnb, so it's locked. We take it from here.</p></div>
+        <div class="step"><div class="num">02</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>AI greets the guest</h3><p>A warm welcome and the full house guide goes out inside Airbnb, in the guest's language.</p></div>
+        <div class="step"><div class="num">03</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg></div><h3>Door code issued</h3><p>A unique smart-lock code for the stay, expiring at checkout. No keys, no meet-and-greet.</p></div>
+        <div class="step"><div class="num">04</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div><h3>AI answers 24/7</h3><p>Wifi, early check-in, local tips, late checkout. Checked against your live calendar, answered in seconds.</p></div>
+        <div class="step"><div class="num">05</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><h3>Checkout detected</h3><p>The moment your calendar flips, the turnover clock starts and the door code dies.</p></div>
+        <div class="step"><div class="num">06</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l3 3v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/></svg></div><h3>Cleaner dispatched</h3><p>Your cleaner gets the address, the gap and the next check-in. Or we tap our AU network.</p></div>
+        <div class="step"><div class="num">07</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.3 6.2 21l1.5-6.5L3 10.2l6.6-.6L12 3.5l2.4 6.1 6.6.6-4.7 4.3 1.5 6.5z"/></svg></div><h3>Review requested</h3><p>After checkout the AI thanks the guest and asks for a review at the moment they're happiest.</p></div>
+        <div class="step"><div class="num">↻</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div><h3>Repeat, forever</h3><p>It turns over and over without you opening the app. You check in when you want, not because you have to.</p></div>
+      </div>
+    </section>
+
+    <!-- AU -->
+    <section>
+      <div class="section-head">
+        <div class="k">Why Australian hosts</div>
+        <h2>Built here, for the rules here.</h2>
+        <p>The big global tools treat Australia as an afterthought. We don't. This is the part the US players won't bother to get right.</p>
+      </div>
+      <div class="au-grid">
+        <div class="au-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><div><h4>Short-stay rules, handled</h4><p>NSW 180-night caps, council registration numbers, state STRA requirements. We track the limits so you stay compliant without thinking about it.</p></div></div>
+        <div class="au-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><h4>AUD payouts, GST-ready records</h4><p>Everything in dollars, clean records your accountant can actually use at tax time. No currency guesswork.</p></div></div>
+        <div class="au-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l3 3v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/></svg></div><div><h4>A local cleaner network</h4><p>Keep your own cleaner, or we plug you into vetted cleaners in your area. Either way, turnovers just happen.</p></div></div>
+        <div class="au-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h4>Humans in your timezone</h4><p>When the AI escalates a real problem, a Sydney-hours team picks it up. Not a ticket queue 14 hours behind you.</p></div></div>
+      </div>
+    </section>
+
+    <!-- WHAT STAYS YOURS -->
     <section>
       <div class="section-head">
         <div class="k">The honest part</div>
-        <h2>What you stop doing, and what stays yours.</h2>
-        <p>"Fully automated" doesn't mean a black box. The busywork disappears. The decisions that actually need an owner stay with you, and only reach you when they matter.</p>
+        <h2>We take the busywork. You keep the wheel.</h2>
+        <p>"Fully managed" isn't a black box. The repetitive work disappears. The decisions that need an owner stay with you, and only reach you when they matter.</p>
       </div>
       <div class="split">
         <div class="panel">
-          <h3>Hostless takes over</h3>
-          <div class="sub">The repetitive work that eats your evenings</div>
-          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Answering the same 12 guest questions</div><div class="ld">Wifi, parking, check-in time, bins, late checkout, the beach.</div></div></div>
-          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Coordinating keys and check-ins</div><div class="ld">Codes generate and expire on their own. No lockboxes, no meeting guests.</div></div></div>
-          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Texting the cleaner after every checkout</div><div class="ld">Dispatched automatically with the right gap and details.</div></div></div>
-          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Chasing reviews</div><div class="ld">Requested at the perfect moment, every single stay.</div></div></div>
+          <h3>We take over</h3>
+          <div class="sub">The work that eats your evenings</div>
+          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Answering the same 12 guest questions</div><div class="ld">Wifi, parking, check-in, bins, late checkout, the beach.</div></div></div>
+          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Keys, codes and check-ins</div><div class="ld">Generated and expired automatically. No lockboxes, no meetups.</div></div></div>
+          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Chasing the cleaner after every checkout</div><div class="ld">Dispatched with the right gap and details, every time.</div></div></div>
+          <div class="li"><span class="tick no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><div><div class="lt">Reviews and the 2am messages</div><div class="ld">Requested at the perfect moment. Answered while you sleep.</div></div></div>
         </div>
-        <div class="panel dark">
-          <h3>You keep the wheel</h3>
-          <div class="sub">The owner decisions Hostless will never take for you</div>
-          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">Pricing strategy</div><div class="ld">It suggests, you approve. Your nightly rate stays your call.</div></div></div>
-          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">Real problems</div><div class="ld">A broken aircon, an angry guest, a damage claim — escalated to you on the spot.</div></div></div>
-          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">Refunds and exceptions</div><div class="ld">Anything that touches money or goodwill waits for your yes.</div></div></div>
-          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">The guests you allow</div><div class="ld">Screening rules are yours. The AI just enforces them.</div></div></div>
+        <div class="panel accent">
+          <h3>You keep</h3>
+          <div class="sub">The owner calls we never make for you</div>
+          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">Your pricing</div><div class="ld">We suggest, you approve. The nightly rate stays your call.</div></div></div>
+          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">Money and goodwill</div><div class="ld">Refunds, damage claims, repair quotes. Anything that costs you waits for your yes.</div></div></div>
+          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">Your listing and reviews</div><div class="ld">They stay on your Airbnb account, in your name. Always.</div></div></div>
+          <div class="li"><span class="tick keep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><div class="lt">The off switch</div><div class="ld">Cancel anytime. Your account, codes and history stay exactly as they are.</div></div></div>
         </div>
       </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div class="k">Plugs into what you have</div>
-        <h2>Nothing to migrate.</h2>
-      </div>
-      <div class="integ">
-        <span class="chip"><span class="cd" style="background:#cf5e2c"></span>Your Airbnb account</span>
-        <span class="chip"><span class="cd" style="background:#2f5d50"></span>Smart lock</span>
-        <span class="chip"><span class="cd" style="background:#b97e1f"></span>Your cleaner</span>
-        <span class="chip"><span class="cd" style="background:#5c6bc0"></span>Stripe (for direct bookings)</span>
-      </div>
-      <div class="note-airbnb">
+      <div class="note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <div><b>It works with Airbnb, it doesn't replace it.</b> Your listings, your reviews, your payouts and your Superhost status all stay exactly where they are. The AI agent simply works inside your Airbnb inbox on your behalf. If you ever switch Hostless off, you've lost nothing.</div>
+        <div><b>We work with Airbnb, we don't replace it.</b> Your listings, reviews, payouts and Superhost status all stay where they are, in your account. We simply run the day-to-day on your behalf. Switch us off and you've lost nothing.</div>
       </div>
     </section>
 
+    <!-- CTA / PRICING -->
+    <div class="cta-band">
+      <div class="k">Simple, all-in pricing</div>
+      <h2>Hand it over this week.</h2>
+      <div class="cta-price"><b>$129</b> <span class="per">per property / month</span></div>
+      <p class="cta-sub">Fully managed. No setup fee. No lock-in. Prefer a revenue share? We'll do 10% of bookings instead. Your call.</p>
+      <button class="btn-primary">Book a 15-min setup call</button>
+    </div>
+
+    <footer>Demo build · mock data · <b>Hostless</b> runs on top of your existing Airbnb account. Not affiliated with Airbnb.</footer>
   </div>
 </main>
 
-<!-- ============================ DASHBOARD ============================ -->
+<!-- ============================ OWNER DASHBOARD ============================ -->
 <main class="view" id="view-app">
   <div class="wrap">
 
     <div class="dash-head">
       <div>
         <h2>Good morning, Ryan.</h2>
-        <div class="greet">4 properties · 1 turnover in progress · everything handled overnight while you slept.</div>
+        <div class="greet">4 properties · everything below was handled overnight. 2 things are waiting on you.</div>
       </div>
-      <div class="seg">
-        <button class="on">Today</button>
-        <button>This week</button>
-        <button>30 days</button>
+      <div class="seg"><button class="on">Today</button><button>This week</button><button>30 days</button></div>
+    </div>
+
+    <!-- the managed-service differentiator: you only touch what needs an owner -->
+    <div class="approve">
+      <div class="approve-top"><span class="badge-warn">Needs your approval</span><h3>2 owner decisions</h3></div>
+      <div class="hint">Everything else ran itself. These are the only two things that need you today.</div>
+      <div class="arow">
+        <div class="at"><div class="att">Repair quote · Hinterland Haus aircon</div><div class="atd">Daniel reported it 7:51am. We sourced a local tech: <b style="color:var(--cream)">$180, can attend today 2pm</b>. Approve the spend?</div></div>
+        <div class="acts"><button class="mini yes" onclick="this.parentElement.innerHTML='<span class=\'mini done\'>✓ Approved</span>'">Approve</button><button class="mini no">Not now</button></div>
+      </div>
+      <div class="arow">
+        <div class="at"><div class="att">Price suggestion · Surfside Studio</div><div class="atd">July occupancy is soft (62%). We suggest dropping the nightly rate <b style="color:var(--cream)">$210 → $185</b> for 3 weeks to fill it. Apply?</div></div>
+        <div class="acts"><button class="mini yes" onclick="this.parentElement.innerHTML='<span class=\'mini done\'>✓ Applied</span>'">Apply</button><button class="mini no">Keep $210</button></div>
       </div>
     </div>
 
     <div class="metrics">
+      <div class="metric hero-metric">
+        <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Your payouts (30d)</div>
+        <div class="mv" data-count="42180" data-prefix="$">$0</div>
+        <div class="md">▲ $5,910 vs last month</div>
+      </div>
       <div class="metric">
         <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg> Occupancy</div>
         <div class="mv" data-count="87" data-suffix="%">0%</div>
-        <div class="md up">▲ 6 pts vs last month</div>
+        <div class="md">▲ 6 pts vs last month</div>
       </div>
       <div class="metric">
-        <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Auto-handled</div>
+        <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> We handled</div>
         <div class="mv" data-count="1284" data-suffix="">0</div>
-        <div class="md up">92% of all guest messages</div>
+        <div class="md">92% of guest messages, no host input</div>
       </div>
       <div class="metric">
         <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Avg reply</div>
         <div class="mv" data-count="24" data-suffix="s">0s</div>
-        <div class="md up">vs 3h 40m industry avg</div>
+        <div class="md">vs 3h 40m industry avg</div>
       </div>
       <div class="metric">
         <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13l3 3v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/></svg> Turnovers</div>
-        <div class="mv">38<span style="font-size:18px;color:var(--ink-faint)">/38</span></div>
-        <div class="md up">100% on time this month</div>
-      </div>
-      <div class="metric">
-        <div class="ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Net payouts</div>
-        <div class="mv" data-count="42180" data-prefix="$">$0</div>
-        <div class="md up">▲ $5,910 vs last month</div>
+        <div class="mv">38<span style="font-size:18px;color:var(--sage-dim)">/38</span></div>
+        <div class="md">100% on time this month</div>
       </div>
     </div>
 
     <div class="grid2">
-      <!-- LEFT -->
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div class="block">
-          <div class="block-h">
-            <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/></svg> Properties</h3>
-            <span class="tagn">4 listings · all synced</span>
-          </div>
+          <div class="block-h"><h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/></svg> Your properties</h3><span class="tagn">4 listings · all managed</span></div>
           <div class="props">
-            <div class="prop">
-              <div class="prop-top">
-                <div><h4>The Tin Shed</h4><div class="loc">Byron Bay · 2BR · sleeps 4</div></div>
-                <span class="badge b-occ">Occupied</span>
-              </div>
-              <div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg> Sarah Mills · checkout tomorrow 10:00</div>
-              <div class="occbar"><i style="width:94%"></i></div>
-              <div class="occn"><span>Occupancy</span><span>94%</span></div>
-            </div>
-            <div class="prop">
-              <div class="prop-top">
-                <div><h4>Hinterland Haus</h4><div class="loc">Mullumbimby · 3BR · sleeps 6</div></div>
-                <span class="badge b-turn">Turnover</span>
-              </div>
-              <div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13l3 3v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/></svg> Cleaner on site · next guest 15:00</div>
-              <div class="occbar"><i style="width:88%"></i></div>
-              <div class="occn"><span>Occupancy</span><span>88%</span></div>
-            </div>
-            <div class="prop">
-              <div class="prop-top">
-                <div><h4>Surfside Studio</h4><div class="loc">Coolangatta · studio · sleeps 2</div></div>
-                <span class="badge b-vac">Vacant</span>
-              </div>
-              <div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg> Next check-in in 2 days · Mara Lindt</div>
-              <div class="occbar"><i style="width:76%"></i></div>
-              <div class="occn"><span>Occupancy</span><span>76%</span></div>
-            </div>
-            <div class="prop">
-              <div class="prop-top">
-                <div><h4>The Greenhouse</h4><div class="loc">Bangalow · 1BR · sleeps 2</div></div>
-                <span class="badge b-occ">Occupied</span>
-              </div>
-              <div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg> James Tran · checkout Sat 10:00</div>
-              <div class="occbar"><i style="width:91%"></i></div>
-              <div class="occn"><span>Occupancy</span><span>91%</span></div>
-            </div>
+            <div class="prop"><div class="prop-top"><div><h4>The Tin Shed</h4><div class="loc">Byron Bay · 2BR · sleeps 4</div></div><span class="badge b-occ">Occupied</span></div><div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg> Sarah Mills · checkout tomorrow 10:00</div><div class="occbar"><i style="width:94%"></i></div><div class="occn"><span>Occupancy</span><span>94%</span></div></div>
+            <div class="prop"><div class="prop-top"><div><h4>Hinterland Haus</h4><div class="loc">Mullumbimby · 3BR · sleeps 6</div></div><span class="badge b-turn">Turnover</span></div><div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13l3 3v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/></svg> Cleaner on site · next guest 15:00</div><div class="occbar"><i style="width:88%"></i></div><div class="occn"><span>Occupancy</span><span>88%</span></div></div>
+            <div class="prop"><div class="prop-top"><div><h4>Surfside Studio</h4><div class="loc">Coolangatta · studio · sleeps 2</div></div><span class="badge b-vac">Vacant</span></div><div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg> Next check-in in 2 days · Mara Lindt</div><div class="occbar"><i style="width:76%"></i></div><div class="occn"><span>Occupancy</span><span>76%</span></div></div>
+            <div class="prop"><div class="prop-top"><div><h4>The Greenhouse</h4><div class="loc">Bangalow · 1BR · sleeps 2</div></div><span class="badge b-occ">Occupied</span></div><div class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg> James Tran · checkout Sat 10:00</div><div class="occbar"><i style="width:91%"></i></div><div class="occn"><span>Occupancy</span><span>91%</span></div></div>
           </div>
         </div>
 
         <div class="block">
-          <div class="block-h">
-            <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Today's turnover · Hinterland Haus</h3>
-            <span class="tagn">fully automated</span>
-          </div>
-          <div class="turn">
-            <div class="tl">
-              <div class="tevent"><span class="tdot done"></span><div class="tt">Guest checked out <span class="ttime">10:02</span></div><div class="tm">Calendar flipped. Door code <b style="font-family:var(--mono)">4471</b> deactivated automatically.</div></div>
-              <div class="tevent"><span class="tdot done"></span><div class="tt">Cleaner notified <span class="ttime">10:02</span><span class="auto-pill">auto</span></div><div class="tm">Maria's Cleaning Co. dispatched with address + 5h gap. Confirmed in 4 minutes.</div></div>
-              <div class="tevent"><span class="tdot now"></span><div class="tt">Clean in progress <span class="ttime">11:10 – now</span></div><div class="tm">Started 11:10. Checklist 6/9 done. On track to finish by 13:30.</div></div>
-              <div class="tevent"><span class="tdot next"></span><div class="tt">Next guest arrives <span class="ttime">15:00</span></div><div class="tm">New code issued and welcome message queued. Goes out the second the clean is marked complete.</div></div>
-            </div>
-          </div>
+          <div class="block-h"><h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Today's turnover · Hinterland Haus</h3><span class="tagn">we ran this</span></div>
+          <div class="turn"><div class="tl">
+            <div class="tevent"><span class="tdot done"></span><div class="tt">Guest checked out <span class="ttime">10:02</span></div><div class="tm">Calendar flipped. Door code <b style="font-family:var(--mono)">4471</b> deactivated automatically.</div></div>
+            <div class="tevent"><span class="tdot done"></span><div class="tt">Cleaner notified <span class="ttime">10:02</span><span class="auto-pill">auto</span></div><div class="tm">Maria's Cleaning Co. dispatched with address + 5h gap. Confirmed in 4 minutes.</div></div>
+            <div class="tevent"><span class="tdot now"></span><div class="tt">Clean in progress <span class="ttime">11:10 – now</span></div><div class="tm">Checklist 6/9 done. On track to finish by 13:30.</div></div>
+            <div class="tevent"><span class="tdot next"></span><div class="tt">Next guest arrives <span class="ttime">15:00</span></div><div class="tm">New code issued, welcome message queued. Sends the second the clean is marked complete.</div></div>
+          </div></div>
         </div>
       </div>
 
-      <!-- RIGHT: INBOX -->
       <div class="block">
-        <div class="block-h">
-          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Guest inbox</h3>
-          <span class="tagn">live in Airbnb</span>
-        </div>
-
+        <div class="block-h"><h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Guest messages</h3><span class="tagn">we replied in Airbnb</span></div>
         <div class="inbox-list" id="inboxList">
-          <div class="thread sel" data-thread="james">
-            <div class="tav" style="background:#3a5d54">JT</div>
-            <div class="thread-main">
-              <div class="thread-top"><span class="nm">James Tran</span><span class="tm">2m</span></div>
-              <div class="pv">Any chance of an early check-in on Saturday?</div>
-              <div class="where">The Greenhouse · <span class="pill-ai">AI handled</span></div>
-            </div>
-          </div>
-          <div class="thread" data-thread="sarah">
-            <div class="tav" style="background:#cf5e2c">SM</div>
-            <div class="thread-main">
-              <div class="thread-top"><span class="nm">Sarah Mills</span><span class="tm">24s</span></div>
-              <div class="pv">What's the wifi password?</div>
-              <div class="where">The Tin Shed · <span class="pill-ai">AI handled</span></div>
-            </div>
-          </div>
-          <div class="thread" data-thread="mara">
-            <div class="tav" style="background:#b97e1f">ML</div>
-            <div class="thread-main">
-              <div class="thread-top"><span class="nm">Mara Lindt</span><span class="tm">1h</span></div>
-              <div class="pv">Thanks! Can't wait, see you in two days 🌊</div>
-              <div class="where">Surfside Studio · <span class="pill-ai">AI handled</span></div>
-            </div>
-          </div>
-          <div class="thread" data-thread="daniel">
-            <div class="tav" style="background:#a83f44">DC</div>
-            <div class="thread-main">
-              <div class="thread-top"><span class="nm">Daniel Cooper</span><span class="tm">8m</span></div>
-              <div class="pv">The aircon in the main bedroom isn't cooling…</div>
-              <div class="where">Hinterland Haus · <span class="pill-esc">Escalated to you</span></div>
-            </div>
-          </div>
+          <div class="thread sel" data-thread="james"><div class="tav" style="background:#84c9a3">JT</div><div class="thread-main"><div class="thread-top"><span class="nm">James Tran</span><span class="tm">2m</span></div><div class="pv">Any chance of an early check-in on Saturday?</div><div class="where">The Greenhouse · <span class="pill-ai">We handled it</span></div></div></div>
+          <div class="thread" data-thread="sarah"><div class="tav" style="background:#d8b878">SM</div><div class="thread-main"><div class="thread-top"><span class="nm">Sarah Mills</span><span class="tm">24s</span></div><div class="pv">What's the wifi password?</div><div class="where">The Tin Shed · <span class="pill-ai">We handled it</span></div></div></div>
+          <div class="thread" data-thread="mara"><div class="tav" style="background:#e08153">ML</div><div class="thread-main"><div class="thread-top"><span class="nm">Mara Lindt</span><span class="tm">1h</span></div><div class="pv">Thanks! Can't wait, see you in two days 🌊</div><div class="where">Surfside Studio · <span class="pill-ai">We handled it</span></div></div></div>
+          <div class="thread" data-thread="daniel"><div class="tav" style="background:#e58a76">DC</div><div class="thread-main"><div class="thread-top"><span class="nm">Daniel Cooper</span><span class="tm">8m</span></div><div class="pv">The aircon in the main bedroom isn't cooling…</div><div class="where">Hinterland Haus · <span class="pill-esc">Escalated to you</span></div></div></div>
         </div>
-
         <div class="convo">
-          <div class="convo-h">
-            <div class="tav" id="convoAv" style="background:#3a5d54">JT</div>
-            <div>
-              <div class="ch-nm" id="convoName">James Tran</div>
-              <div class="ch-w" id="convoWhere">The Greenhouse · Byron Bay</div>
-            </div>
-          </div>
-          <div class="msgs" id="msgs"><!-- injected --></div>
-          <div class="convo-foot">
-            <button class="demo-btn" id="demoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Watch the AI reply live</button>
-            <span class="foot-note">Simulates a guest message arriving in Airbnb</span>
-          </div>
+          <div class="convo-h"><div class="tav" id="convoAv" style="background:#84c9a3">JT</div><div><div class="ch-nm" id="convoName">James Tran</div><div class="ch-w" id="convoWhere">The Greenhouse · Bangalow</div></div></div>
+          <div class="msgs" id="msgs"></div>
+          <div class="convo-foot"><button class="demo-btn" id="demoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> See how we reply</button><span class="foot-note">Simulates a guest message landing in Airbnb</span></div>
         </div>
       </div>
     </div>
 
-    <footer>
-      Demo build · mock data · <b>Hostless</b> works on top of your existing Airbnb account. Not affiliated with Airbnb.
-    </footer>
+    <footer>Demo build · mock data · <b>Hostless</b> runs on top of your existing Airbnb account. Not affiliated with Airbnb.</footer>
   </div>
 </main>
 
 <script>
-  /* ---------- tab switching ---------- */
   const tabs = document.querySelectorAll('.tab');
   const views = { how: document.getElementById('view-how'), app: document.getElementById('view-app') };
   let counted = false;
@@ -578,126 +576,79 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (t.dataset.view === 'app' && !counted) { runCounters(); counted = true; }
   }));
+  document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+    b.parentElement.querySelectorAll('button').forEach(x => x.classList.remove('on')); b.classList.add('on');
+  }));
 
-  /* segmented control (visual only) */
-  document.querySelectorAll('.seg button').forEach(b =>
-    b.addEventListener('click', () => {
-      b.parentElement.querySelectorAll('button').forEach(x => x.classList.remove('on'));
-      b.classList.add('on');
-    }));
-
-  /* ---------- count-up metrics ---------- */
   function runCounters() {
     document.querySelectorAll('.mv[data-count]').forEach(el => {
-      const target = +el.dataset.count;
-      const pre = el.dataset.prefix || '';
-      const suf = el.dataset.suffix || '';
-      const dur = 1100; const start = performance.now();
-      function tick(now) {
-        const p = Math.min((now - start) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        const val = Math.round(target * eased);
-        el.textContent = pre + val.toLocaleString() + suf;
-        if (p < 1) requestAnimationFrame(tick);
-      }
+      const target = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+      const dur = 1100, start = performance.now();
+      function tick(now){ const p = Math.min((now-start)/dur,1); const e = 1-Math.pow(1-p,3);
+        el.textContent = pre + Math.round(target*e).toLocaleString() + suf; if (p<1) requestAnimationFrame(tick); }
       requestAnimationFrame(tick);
     });
   }
 
-  /* ---------- conversations ---------- */
   const convos = {
-    james: {
-      name: 'James Tran', where: 'The Greenhouse · Bangalow', av: 'JT', avc: '#3a5d54',
-      msgs: [
-        { who: 'guest', t: "Hi! Any chance of an early check-in on Saturday? Our flight gets in around midday.", s: '9:14 AM' },
-        { who: 'ai', t: "Hi James! Good news — there's no guest before you on Saturday and the clean wraps by 1pm, so I can open the door from 1:00 PM. I'll send your code closer to the day. Enjoy the flight! ✈️", s: '9:14 AM' }
-      ]
-    },
-    sarah: {
-      name: 'Sarah Mills', where: 'The Tin Shed · Byron Bay', av: 'SM', avc: '#cf5e2c',
-      msgs: [
-        { who: 'guest', t: "What's the wifi password?", s: '8:02 AM' },
-        { who: 'ai', t: "Morning Sarah! The network is TinShed_Guest and the password is byronbreeze24. It's also on the welcome card by the kettle. Anything else you need? ☕", s: '8:02 AM' }
-      ]
-    },
-    mara: {
-      name: 'Mara Lindt', where: 'Surfside Studio · Coolangatta', av: 'ML', avc: '#b97e1f',
-      msgs: [
-        { who: 'ai', t: "Hi Mara, you're all set for Thursday! Your house guide, parking spot and a few local coffee picks are below. Your door code will arrive on arrival day. 🌊", s: 'Yesterday' },
-        { who: 'guest', t: "Thanks! Can't wait, see you in two days 🌊", s: '1:11 PM' },
-        { who: 'ai', t: "We can't wait to host you! I'll be right here if anything comes up before then.", s: '1:11 PM' }
-      ]
-    },
-    daniel: {
-      name: 'Daniel Cooper', where: 'Hinterland Haus · Mullumbimby', av: 'DC', avc: '#a83f44',
-      msgs: [
-        { who: 'guest', t: "The aircon in the main bedroom isn't cooling, it's just blowing warm air.", s: '7:51 AM' },
-        { who: 'ai', t: "I'm sorry about that, Daniel — that's something I'm flagging to the owner right now so it gets sorted fast. In the meantime the lounge split-system is working normally.", s: '7:51 AM' },
-        { who: 'esc', t: "⚠ Escalated to Ryan · maintenance · 8 min ago — this one needs a human, so it's waiting on you.", s: '' }
-      ]
-    }
+    james: { name:'James Tran', where:'The Greenhouse · Bangalow', av:'JT', avc:'#84c9a3', msgs:[
+      { who:'guest', t:"Hi! Any chance of an early check-in on Saturday? Our flight gets in around midday.", s:'9:14 AM' },
+      { who:'ai', t:"Hi James! Good news — there's no guest before you on Saturday and the clean wraps by 1pm, so I can open the door from 1:00 PM. I'll send your code closer to the day. Enjoy the flight! ✈️", s:'9:14 AM' } ] },
+    sarah: { name:'Sarah Mills', where:'The Tin Shed · Byron Bay', av:'SM', avc:'#d8b878', msgs:[
+      { who:'guest', t:"What's the wifi password?", s:'8:02 AM' },
+      { who:'ai', t:"Morning Sarah! The network is TinShed_Guest and the password is byronbreeze24. It's also on the welcome card by the kettle. Anything else you need? ☕", s:'8:02 AM' } ] },
+    mara: { name:'Mara Lindt', where:'Surfside Studio · Coolangatta', av:'ML', avc:'#e08153', msgs:[
+      { who:'ai', t:"Hi Mara, you're all set for Thursday! Your house guide, parking and a few local coffee picks are below. Your door code arrives on arrival day. 🌊", s:'Yesterday' },
+      { who:'guest', t:"Thanks! Can't wait, see you in two days 🌊", s:'1:11 PM' },
+      { who:'ai', t:"We can't wait to host you! I'll be right here if anything comes up before then.", s:'1:11 PM' } ] },
+    daniel: { name:'Daniel Cooper', where:'Hinterland Haus · Mullumbimby', av:'DC', avc:'#e58a76', msgs:[
+      { who:'guest', t:"The aircon in the main bedroom isn't cooling, it's just blowing warm air.", s:'7:51 AM' },
+      { who:'ai', t:"I'm sorry about that, Daniel — I'm getting this sorted right now. The lounge split-system is working normally in the meantime, and I'll update you shortly.", s:'7:51 AM' },
+      { who:'esc', t:"⚠ Escalated to the owner · maintenance · a repair quote is now waiting on Ryan's approval in the dashboard.", s:'' } ] }
   };
-
   const msgsEl = document.getElementById('msgs');
-  function renderConvo(key) {
+  function renderConvo(key){
     const c = convos[key];
     document.getElementById('convoName').textContent = c.name;
     document.getElementById('convoWhere').textContent = c.where;
-    const av = document.getElementById('convoAv');
-    av.textContent = c.av; av.style.background = c.avc;
+    const av = document.getElementById('convoAv'); av.textContent = c.av; av.style.background = c.avc;
     msgsEl.innerHTML = '';
-    c.msgs.forEach((m, i) => {
+    c.msgs.forEach((m,i) => {
       const d = document.createElement('div');
       if (m.who === 'esc') {
-        d.className = 'msg'; d.style.alignSelf = 'center'; d.style.maxWidth = '92%';
-        d.style.background = 'var(--rose-wash)'; d.style.color = 'var(--rose)';
-        d.style.fontSize = '12.5px'; d.style.fontWeight = '600'; d.style.textAlign = 'center';
-        d.textContent = m.t;
+        d.className='msg'; d.style.alignSelf='center'; d.style.maxWidth='94%';
+        d.style.background='var(--alert-bg)'; d.style.color='var(--alert)';
+        d.style.fontSize='12.5px'; d.style.fontWeight='600'; d.style.textAlign='center'; d.textContent=m.t;
       } else {
-        d.className = 'msg ' + m.who;
-        d.innerHTML = `<div class="who">${m.who === 'ai' ? 'Hostless AI' : c.name.split(' ')[0]}</div>${m.t}${m.s ? `<span class="stamp">${m.s}</span>` : ''}`;
+        d.className='msg '+m.who;
+        d.innerHTML = `<div class="who">${m.who==='ai'?'Hostless':c.name.split(' ')[0]}</div>${m.t}${m.s?`<span class="stamp">${m.s}</span>`:''}`;
       }
-      d.style.animation = `rise .4s ${i * 0.08}s both`;
+      d.style.animation = `rise .4s ${i*0.08}s both`;
       msgsEl.appendChild(d);
     });
   }
   renderConvo('james');
+  document.querySelectorAll('.thread').forEach(th => th.addEventListener('click', () => {
+    document.querySelectorAll('.thread').forEach(x => x.classList.remove('sel'));
+    th.classList.add('sel'); renderConvo(th.dataset.thread);
+  }));
 
-  document.querySelectorAll('.thread').forEach(th =>
-    th.addEventListener('click', () => {
-      document.querySelectorAll('.thread').forEach(x => x.classList.remove('sel'));
-      th.classList.add('sel');
-      renderConvo(th.dataset.thread);
-    }));
-
-  /* ---------- live AI reply demo ---------- */
   const demoBtn = document.getElementById('demoBtn');
   demoBtn.addEventListener('click', () => {
-    // switch to Sarah's thread for a clean canvas
     document.querySelectorAll('.thread').forEach(x => x.classList.remove('sel'));
     document.querySelector('.thread[data-thread="sarah"]').classList.add('sel');
-    renderConvo('sarah');
-    demoBtn.disabled = true;
-
+    renderConvo('sarah'); demoBtn.disabled = true;
     setTimeout(() => {
-      const g = document.createElement('div');
-      g.className = 'msg guest';
+      const g = document.createElement('div'); g.className='msg guest';
       g.innerHTML = `<div class="who">Sarah</div>Also — is late checkout possible tomorrow? Our taxi isn't till 1pm 🙏<span class="stamp">just now</span>`;
-      g.style.animation = 'rise .35s both';
-      msgsEl.appendChild(g); msgsEl.scrollTop = msgsEl.scrollHeight;
-
-      const typing = document.createElement('div');
-      typing.className = 'typing show';
-      typing.innerHTML = '<i></i><i></i><i></i>';
+      g.style.animation='rise .35s both'; msgsEl.appendChild(g); msgsEl.scrollTop = msgsEl.scrollHeight;
+      const typing = document.createElement('div'); typing.className='typing show'; typing.innerHTML='<i></i><i></i><i></i>';
       setTimeout(() => { msgsEl.appendChild(typing); msgsEl.scrollTop = msgsEl.scrollHeight; }, 500);
-
       setTimeout(() => {
         typing.remove();
-        const a = document.createElement('div');
-        a.className = 'msg ai';
-        a.innerHTML = `<div class="who">Hostless AI</div>Of course, Sarah! I checked the calendar — no one's arriving tomorrow, so I've extended your checkout to 1:00 PM at no charge. Safe travels! 🚕<span class="stamp">replied in 19s · automatically</span>`;
-        a.style.animation = 'rise .4s both';
-        msgsEl.appendChild(a); msgsEl.scrollTop = msgsEl.scrollHeight;
+        const a = document.createElement('div'); a.className='msg ai';
+        a.innerHTML = `<div class="who">Hostless</div>Of course, Sarah! I checked the calendar — no one's arriving tomorrow, so I've extended your checkout to 1:00 PM at no charge. Safe travels! 🚕<span class="stamp">replied in 19s · automatically</span>`;
+        a.style.animation='rise .4s both'; msgsEl.appendChild(a); msgsEl.scrollTop = msgsEl.scrollHeight;
         demoBtn.disabled = false;
         demoBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg> Run it again';
       }, 2100);
